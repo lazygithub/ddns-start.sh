@@ -2,7 +2,7 @@ how to use?
 
 at frist, you must have a domain
 
-second you need to register an account from https://www.dnspod.com
+second you need to register an account from https://www.dnspod.com and change the domain ns record to dnspod.com
 
 and then
 
