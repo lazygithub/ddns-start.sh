@@ -1,3 +1,5 @@
+this is a ddns update script of dnspod.com for the asuswrt-merlin
+
 how to use?
 
 at frist, you must have a domain
