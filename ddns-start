@@ -1,11 +1,14 @@
 #!/bin/sh
-IP=${1}
-#IP=$(wget -O - -q http://myip.dnsomatic.com/)
+if [ $# -ge 1 ] ; then
+        IP=${1}
+else
+        IP=$(wget -O - -q http://myip.dnsomatic.com/)
+fi
 CURL=/usr/sbin/curl
 URL="https://api.dnspod.com/"
-TOKEN_CACHE="/tmp/ddns_token.cache"
-DOMAINID_CACHE="/tmp/ddns_domainID.cache"
-RECORDID_CACHE="/tmp/ddns_recordID.cache"
+TOKEN_CACHE="/jffs/configs/ddns_token.cache"
+DOMAINID_CACHE="/jffs/configs/ddns_domainID.cache"
+RECORDID_CACHE="/jffs/configs/ddns_recordID.cache"
 EMAIL="your account of the dnspod.com"
 PASSWORD="password"
 DOMAIN="domain"
