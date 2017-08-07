@@ -21,7 +21,7 @@ fi
 TOKEN=$(cat "$TOKEN_CACHE")
 
 if [ ! -f "$DOMAINID_CACHE" ]; then
-        $CURL -s POST "$URL"Domain.List -d "user_token=${TOKEN}&format=json" --trace /tmp/a.txt | grep -o "\"id\":.*,\"name\":\"${DOMAIN}\"" | awk -v RS=',"' -F: '/id/{print $2}' | sed 's/\"//g' > "$DOMAINID_CACHE"
+        $CURL -s POST "$URL"Domain.List -d "user_token=${TOKEN}&format=json" | grep -o "\"id\":.*,\"name\":\"${DOMAIN}\"" | awk -v RS=',"' -F: '/id/{print $2}' | sed 's/\"//g' > "$DOMAINID_CACHE"
 fi
 DOMAIN_ID=$(cat "$DOMAINID_CACHE")
 
